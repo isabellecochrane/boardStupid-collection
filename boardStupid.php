@@ -9,3 +9,4 @@ $query = $db->prepare('SELECT * FROM `boardStupid`;');
 $query->execute();
 $result = $query->fetchAll();
 
+//addition
