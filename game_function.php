@@ -6,7 +6,6 @@ function printStats(array $result): string
 
     $game_data = '';
 
-
     foreach ($result as $data) {
         '<div class="game">';
         $game_data .= '<h3>Game: ' . $data['name'] . '</h3>';
@@ -18,7 +17,6 @@ function printStats(array $result): string
         '</div>';
         '</div>';
     }
-
 
     return $game_data;
 }
