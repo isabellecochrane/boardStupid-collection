@@ -1,0 +1,1 @@
+# boardStupid-collection
