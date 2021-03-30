@@ -11,7 +11,9 @@ function printStats(array $result): string
 {
 
     $game_data = '';
-
+if (empty($result)){
+    return 'There are no games to display';
+} else {
     foreach ($result as $data) {
         '<div class="game">';
         $game_data .= '<h3>Game: ' . $data['name'] . '</h3>';
@@ -25,6 +27,7 @@ function printStats(array $result): string
     }
 
     return $game_data;
+}
 }
 
 

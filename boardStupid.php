@@ -35,8 +35,6 @@ require_once 'game_function.php'
 
 
 
-if (isset($result[null])) {
-    echo 'There are no games to display';
-}
+
 
 echo printStats($result);
