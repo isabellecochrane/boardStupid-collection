@@ -22,8 +22,8 @@ if (empty($result)){
                 $game_data .= '<div>game duration: ' . $data['playing_time'] . ' minutes' . '</div>';
                 $game_data .= '<div>minimum players: ' . $data['min_players'] . '</div>';
                 $game_data .= '<div>maximum players: ' . $data['max_players'] . '</div>';
-            '</div>';
-        '</div>';
+            $game_data .='</div>';
+        $game_data .='</div>';
     }
 
     return $game_data;
