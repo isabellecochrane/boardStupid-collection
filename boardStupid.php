@@ -11,7 +11,7 @@ $result = $query->fetchAll();
 require_once 'game_function.php'
 
 ?>
-//form below 
+//form below
     <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,11 +20,11 @@ require_once 'game_function.php'
     </head>
     <body>
     <form method="post">
-        <label>Game:<br /> <input type="text" name="name"/></label><br />
-        <label>Rating:<br /> <input type="text" name="rating"/></label><br />
-        <label>Duration:<br /> <input type="text" name="playing_time"/></label><br />
-        <label>Minimum Players:<br /> <input type="text" name="min_players"/></label><br />
-        <label>Maximum Players:<br /> <input type="text" name="max_players"</label><br />
+        <label>Game:<br/> <input type="text" name="name"/></label><br/>
+        <label>Rating:<br/> <input type="number" name="rating"/></label><br >
+        <label>Duration:<br/> <input type="number" name="playing_time"/></label><br/>
+        <label>Minimum Players:<br/> <input type="number" name="min_players"/></label><br/>
+        <label>Maximum Players:<br/> <input type="number" name="max_players"</label><br/>
             <input type="submit"/>
         </form>
 
