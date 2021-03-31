@@ -1,14 +1,9 @@
 <?php
 session_start();
 
-$db = new PDO('mysql:host=db; dbname=boardStupid', 'root', 'password');
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-
-$query = $db->prepare('SELECT *  FROM `boardStupid`;');
-$query->execute();
-$result = $query->fetchAll();
-
-require_once 'game_function.php'
+require_once 'game_function.php';
+$db = getDB();
+$result = getBoardStupid($db);
 
 ?>
 
@@ -19,14 +14,18 @@ require_once 'game_function.php'
         <title>boardStupid</title>
     </head>
     <body>
-    <form method="post">
-        <label>Game:<br /> <input type="text" name="name"/></label><br />
-        <label>Rating:<br /> <input type="text" name="rating"/></label><br />
-        <label>Duration:<br /> <input type="text" name="playing_time"/></label><br />
-        <label>Minimum Players:<br /> <input type="text" name="min_players"/></label><br />
-        <label>Maximum Players:<br /> <input type="text" name="max_players"</label><br />
-            <input type="submit"/>
+    <form action="bs_update_db.php" method="post">
+        <div><label>Game:<div><input type="text" name="name"/></label></div></div>
+        <div><label>Rating:<div><input type="text" name="rating"/></label></div></div>
+        <div><label>Duration:<div><input type="text" name="playing_time"/></label></div></div>
+        <div><label>Minimum Players:<div><input type="text" name="min_players"/></label></div></div>
+        <div><label>Maximum Players:<div><input type="text" name="max_players"</label></div></div>
+        <div><input type="submit" value="Add Game"/></div>
         </form>
+    <form action="game_function.php" method="post">
+        <label>Name of game you would like to remove:<br/> <input type="text" name="name"/></label>
+        <input type="submit" value="Delete"/>
+    </form>
 
     <h1>boardStupid</h1>
     </body>
