@@ -15,9 +15,9 @@ function getDB(): PDO
  * @param $db
  * @return mixed
  */
-function getBoardStupid($db)
+function getBoardStupid(object $db): array
 {
-    $query = $db->prepare('SELECT *  FROM `boardStupid`;');
+    $query = $db->prepare('SELECT *  FROM `boardStupid` WHERE `deleted` = 0;');
     $query->execute();
     $result = $query->fetchAll();
     return $result;
@@ -35,7 +35,6 @@ if (empty($result)) {
     return 'There are no games to display';
 }
 foreach ($result as $data) {
-    if (!$data['deleted']) {
         $game_data .= '<div class="game">';
             $game_data .= '<h3>Game: ' . $data['name'] . '</h3>';
             $game_data .= '<div class="info">';
@@ -46,8 +45,6 @@ foreach ($result as $data) {
             $game_data .= '</div>';
             $game_data .= '<a href="delete.php?id=' . $data['id'] . '">delete</a>';
         $game_data .= '</div>';
-
-}
 }
     return $game_data;
 }
@@ -56,7 +53,7 @@ foreach ($result as $data) {
  * @param $db
  * @return bool
  */
-function deleteGame($db)
+function deleteGame(PDO $db) :bool
 {
     $query = $db->prepare('UPDATE `boardStupid` SET `deleted`  = 1 WHERE `id` = :id');
     $query->bindParam('id', $_GET['id']);
