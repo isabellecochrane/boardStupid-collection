@@ -1,5 +1,5 @@
 <?php
-require_once 'boardStupid.php';
+
 require_once 'game_function.php';
 
 if (count($_POST)=== 5)
@@ -31,7 +31,3 @@ function addGame(object $db, string $name, string $rating, string $playing_time,
     return true;
 }
 
-function removeGame()
-{
-
-}
