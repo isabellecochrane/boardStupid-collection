@@ -32,6 +32,6 @@ class Test extends Testcase {
     public function testPrintStats_malformed1()
     {
         $this->expectException(TypeError::class);
-        printStats('this isa  string');
+        printStats(true);
     }
 }
