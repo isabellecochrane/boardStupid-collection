@@ -3,7 +3,6 @@
 }
 body {
 	margin:auto;
-	background-color: cornflowerblue;
 	color: #e67e00;
 }
 section  {
@@ -22,7 +21,7 @@ section  {
 
 h1 {
 	text-align: center;
-	color: darkorange;
+	color: #e67e00;
 }
 
 h3 {
@@ -31,6 +30,8 @@ h3 {
 
 a {
 	font-size: .7em;
+	background-color: transparent;
+	color: cornflowerblue;
 }
 
 h2 {
@@ -40,8 +41,13 @@ h2 {
 }
 
 input {
- 	font-size: .5em;
+	font-size: .5em;
 	align-items: center;
+	border-color: cornflowerblue;
+	border-width: 1px;
+	background-color: cornflowerblue;
+	color: #e67e00;
+	font-weight: bolder;
 }
 
 label {
@@ -66,3 +72,9 @@ form {
 	align-self: center;
 
 }
+
+a {
+	background-color: transparent;
+	color: cornflowerblue;
+}
+
