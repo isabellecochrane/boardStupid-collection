@@ -4,6 +4,7 @@
 body {
 	margin:auto;
 	background-color: cornflowerblue;
+	color: #e67e00;
 }
 section  {
 	display:grid;
@@ -12,7 +13,7 @@ section  {
 
 .game {
 	margin: 0px 0px 0px 20px;
-	border: 1px solid darkorange;
+	border: 1px solid #e67e00;
 }
 
 .info {
