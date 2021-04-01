@@ -45,13 +45,13 @@ input {
 	align-items: center;
 	border-color: cornflowerblue;
 	border-width: 1px;
-	background-color: cornflowerblue;
+
 	color: #e67e00;
 	font-weight: bolder;
 }
 
 label {
-	font-size: 5px;
+	font-size: 10px;
 }
 
 .entry {

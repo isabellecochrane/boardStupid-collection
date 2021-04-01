@@ -16,8 +16,8 @@ class Test extends Testcase {
             'max_players' => '3'
         ]];
         $result = printStats($practice_array);
-        $expected = '<div class="game">' . '<h3>Game: boardgame</h3>' . '<div class="info">'  . '<div>Rating: 5' . '/5'. '</div>' . '<div>game duration: 30 minutes' . '</div>'
-        . '<div>minimum players: 2' . '</div>' . '<div>maximum players: 3' . '</div>' . '</div>' . '<a href="delete.php?id=">delete</a>' . '</div>';
+        $expected = '<div class="game">' . '<h3>boardgame</h3>' . '<div class="info">'  . '<div>Rating: 5' . '/5'. '</div>' . '<div>Game duration: 30 minutes' . '</div>'
+        . '<div>Minimum players: 2' . '</div>' . '<div>Maximum players: 3' . '</div>' . '</div>' . '<a href="delete.php?id=">Remove</a>' . '</div>';
 
         $this->assertEquals($result, $expected);
     }
