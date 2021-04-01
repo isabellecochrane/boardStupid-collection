@@ -34,26 +34,29 @@ $game_data = '';
 if (empty($result)) {
     return 'There are no games to display';
 }
-
 foreach ($result as $data) {
         $game_data .= '<div class="game">';
             $game_data .= '<h3>' . $data['name'] . '</h3>';
             $game_data .= '<div class="info">';
                 $game_data .= '<div>Rating: ' . $data['rating'] . '/5' . '</div>';
-                $game_data .= '<div>game duration: ' . $data['playing_time'] . ' minutes' . '</div>';
-                $game_data .= '<div>minimum players: ' . $data['min_players'] . '</div>';
-                $game_data .= '<div>maximum players: ' . $data['max_players'] . '</div>';
+                $game_data .= '<div>Game duration: ' . $data['playing_time'] . ' minutes' . '</div>';
+                $game_data .= '<div>Minimum players: ' . $data['min_players'] . '</div>';
+                $game_data .= '<div>Maximum players: ' . $data['max_players'] . '</div>';
             $game_data .= '</div>';
-            $game_data .= '<a href="delete.php?id=' . $data['id'] . '">delete</a>';
+            $game_data .= '<a href="delete.php?id=' . $data['id'] . '">Remove</a>';
         $game_data .= '</div>';
 }
     return $game_data;
+
 }
 
 
 if (count($_POST)=== 5)
 {
-
+    if (array_search('', $_POST)) {
+        header('Location: boardStupid.php?error=Enter all values');
+        exit;
+    }
     $db = getDB();
     $name = $_POST['name'];
     $rating = $_POST['rating'];
@@ -62,6 +65,8 @@ if (count($_POST)=== 5)
     $max_players = $_POST['max_players'];
 
     $games = addGame($db, $name, $rating, $playing_time, $min_players, $max_players);
+    header("Location: boardStupid.php");
+    exit;
 
 }
 /**
