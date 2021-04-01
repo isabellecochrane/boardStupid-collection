@@ -2,6 +2,10 @@
 require_once 'delete.php';
 require_once 'game_function.php';
 
+if(isset($_SESSION[NULL])) {
+    header('Location: boardStupid_prelog.php');
+    exit;
+}
 
 ?>
     <!DOCTYPE html>
@@ -13,7 +17,14 @@ require_once 'game_function.php';
         <title>boardStupid</title>
     </head>
     <body>
+    <nav>
     <h1>boardStupid</h1>
+    <div class="login">
+        <a href="log_out.php">Log out</a>
+    </div>
+    </nav>
+
+
     <section>
         <?php
         $db = getDB();
